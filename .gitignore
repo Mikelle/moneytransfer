@@ -28,6 +28,7 @@ hs_err_pid*
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
+.idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
@@ -43,6 +44,7 @@ hs_err_pid*
 .idea/**/dbnavigator.xml
 
 # Gradle
+.idea/**/gradle.xml
 .idea/**/libraries
 
 # Gradle and Maven with auto-import
@@ -98,10 +100,3 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
-.idea/
-build.gradle
-gradle/
-gradlew
-gradlew.bat
-settings.gradle
-src/
