@@ -4,13 +4,15 @@ import com.revolut.moneytransfer.exception.NegativeAmountException;
 import com.revolut.moneytransfer.exception.NotEnoughMoneyException;
 import com.revolut.moneytransfer.exception.SameAccountException;
 import com.revolut.moneytransfer.model.Account;
+import com.revolut.moneytransfer.model.TransferResponse;
 
 import java.math.BigDecimal;
 import java.util.concurrent.locks.Lock;
 
 public class MoneyTransferService {
 
-    public void moneyTransfer(Account from, Account to, BigDecimal amount) throws SameAccountException, NotEnoughMoneyException, NegativeAmountException {
+    public TransferResponse moneyTransfer(Account from, Account to, BigDecimal amount)
+            throws SameAccountException, NotEnoughMoneyException, NegativeAmountException {
         if (from.getId() == to.getId())
             throw new SameAccountException();
 
@@ -25,7 +27,7 @@ public class MoneyTransferService {
             secondLock.lock();
             try {
                 if (from.getBalance().compareTo(amount) < 0)
-                    throw new NotEnoughMoneyException(from.getId(), amount);
+                    throw new NotEnoughMoneyException(from.getId(), from.getBalance(), amount);
 
                 from.setBalance(from.getBalance().subtract(amount));
                 to.setBalance(to.getBalance().add(amount));
@@ -36,5 +38,6 @@ public class MoneyTransferService {
         } finally {
             firstLock.unlock();
         }
+        return new TransferResponse(from, to);
     }
 }

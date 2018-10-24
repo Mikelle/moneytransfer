@@ -12,10 +12,12 @@ import java.math.BigDecimal;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class NotEnoughMoneyException extends Exception {
     long id;
+    BigDecimal accountBalance;
     BigDecimal amount;
 
     @Override
     public String getMessage() {
-        return String.format("Account with id = %d doesn't have enough money to transfer this amount = %s", id, amount.toString());
+        return String.format("Account with id = %d have only %s. This is not enough to transfer this amount = %s",
+                id, accountBalance.toString(), amount.toString());
     }
 }

@@ -1,4 +1,4 @@
-package com.revolut.moneytransfer;
+package com.revolut.moneytransfer.util;
 
 import com.google.gson.Gson;
 import spark.ResponseTransformer;

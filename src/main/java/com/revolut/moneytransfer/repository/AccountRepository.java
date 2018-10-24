@@ -6,6 +6,8 @@ import java.util.Collection;
 
 public interface AccountRepository {
     Account findOneById(Long id);
+
     void save(Account account);
+
     Collection<Account> getAllAccounts();
 }

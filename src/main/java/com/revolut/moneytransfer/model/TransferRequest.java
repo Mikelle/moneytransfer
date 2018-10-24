@@ -8,8 +8,8 @@ import java.math.BigDecimal;
 
 @Value
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Transfer {
-    long fromAccountId;
-    long toAccountId;
+public class TransferRequest {
+    String fromAccountId;
+    String toAccountId;
     BigDecimal amount;
 }
