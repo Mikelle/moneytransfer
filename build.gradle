@@ -21,7 +21,7 @@ ext.lombokVersion = "1.18.2"
 jar {
     manifest {
         attributes(
-                'Main-Class': 'com.revolut.Application'
+                'Main-Class': 'com.revolut.moneytransfer.Application'
         )
     }
 
