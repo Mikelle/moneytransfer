@@ -14,5 +14,5 @@ Service with REST API for money transfer.
 | ------ | ------ | ------ | ------ | ------ |
 | Create new account with balance | POST | /accounts | JSON with info about account | Input: [{"balance": 1000}]; Output: [{"id": 1, "balance": 100}] |
 | Get account by id | GET | /accounts/{id} | JSON with info about account | Output: [{"id": 1, "balance": 1000}] |
-| Get accounts | GET | /accounts | JSON with info about accounts | Output: [{"id":1,"balance":1000},{"id":2,"balance":1000},{"id":3,"balance":3000}]
-| Transfer money | POST | /transfer | JSON with info about accounts | Input: [{"fromAccountId": 1, "toAccountId": 2, "amount": 100}]; Output: [{"fromAccount": {id: 1, balance: 900}, toAccount: {id: 2, balance: 1100}}]|
+| Get accounts | GET | /accounts | JSON with info about accounts | Output: [{"id": 1, "balance":1000}, {"id":2,"balance": 1000}, {"id":3, "balance":3000}]
+| Transfer money | POST | /transfer | JSON with info about accounts | Input: [{"fromAccountId": 1, "toAccountId": 2, "amount": 100}]; Output: [{"fromAccount": {"id": 1, "balance": 900}, toAccount: {"id": 2, "balance": 1100}}]|
